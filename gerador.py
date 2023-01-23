@@ -23,7 +23,7 @@ except mysql.connector.Error as e:
 # Generate and insert sinusoidal data into the table in real-time
 x = 0
 while True:
-    for i in range(10):
+    for i in range(3600):
         try:
             t1= 20*math.sin(x)
             t2 = 30*math.sin(x+10)
@@ -40,7 +40,7 @@ while True:
             
             x += 0.05
 
-            if i == 9:
+            if i == 3599:
                 c.execute('DELETE FROM molde1;')
                 c.execute('ALTER TABLE molde1 AUTO_INCREMENT = 1;')
 
