@@ -36,13 +36,13 @@ while True:
             accy = 15*math.sin(x+10)
             accz = 20*math.sin(x+20)
             deff = 20*math.sin(x)
-            c.execute("INSERT INTO molde1 (T1, T2, P1, P2, D1, D2, D3, ACCX, ACCY, ACCZ, DEF) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (t1, t2, p1, p2, d1, d2, d3, accx, accy, accz, deff))
+            c.execute("INSERT INTO ensaio1 (T1, T2, P1, P2, D1, D2, D3, ACCX, ACCY, ACCZ, DEF) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (t1, t2, p1, p2, d1, d2, d3, accx, accy, accz, deff))
             
             x += 0.05
 
             if i == 3599:
-                c.execute('DELETE FROM molde1;')
-                c.execute('ALTER TABLE molde1 AUTO_INCREMENT = 1;')
+                c.execute('DELETE FROM ensaio1;')
+                c.execute('ALTER TABLE ensaio1 AUTO_INCREMENT = 1;')
 
             conn.commit()
             time.sleep(1)
