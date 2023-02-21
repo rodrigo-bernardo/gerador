@@ -3,10 +3,10 @@ import math
 import time
 
 # database connection information
-host = "127.0.0.1"
+host = "172.23.0.2"
 user = "root"
-password = ".,Descobre123"
-database = "ddsua2023"
+password = "123456789"
+database = "ddsua"
 
 # Connect to the database
 try:
@@ -21,7 +21,7 @@ except mysql.connector.Error as e:
     exit()
 
 # Generate and insert sinusoidal data into the table in real-time
-ens = 2
+ens = 1
 x = 0
 while True:
     if ens == 1:
